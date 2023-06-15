@@ -1,0 +1,32 @@
+---
+- name: Loops Playbook
+  hosts: deb11test
+  become: 'yes'
+  tasks:
+  - name: Say Hello to all users
+    debug:
+      msg: "Hello, {{ item }}"
+    loop:
+       - "Vasya"
+       - "Fedya"
+       - "Lena"
+
+  - name: Example loop until
+    shell: echo -n Z >> /home/user/myfile.txt && cat /home/user/myfile.txt
+    register: output
+    delay: 2                                                      
+    retries: 10                           
+    until: output.stdout.find("ZZZZ") == false               
+
+  - name: Print final outpuut
+    debug:
+      var: output.stdout
+
+
+#  - name: Say Hello to all users
+#    debug:
+#      msg: "Hello, {{ item }}"
+#    with_items:
+#       - "Alex"
+#       - "Max"
+#       - "Frank"
