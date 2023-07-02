@@ -22,7 +22,7 @@
     debug:
       var: output.stdout
 
-
+###
 #  - name: Say Hello to all users
 #    debug:
 #      msg: "Hello, {{ item }}"
@@ -30,3 +30,4 @@
 #       - "Alex"
 #       - "Max"
 #       - "Frank"
+###
