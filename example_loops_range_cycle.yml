@@ -37,5 +37,3 @@
       dest: '{{ file_path }}/{{ project_title }}_{{ item }}.service'
     loop: '{{ range(3000,3020) }}'
 ### tets example playbook ###
-### tets example playbook ###
-### tets example playbook ###
