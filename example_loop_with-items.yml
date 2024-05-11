@@ -31,3 +31,13 @@
 #       - "Max"
 #       - "Frank"
 ###
+
+###
+#  - name: Say Hello to all users
+#    debug:
+#      msg: "Hello, {{ item }}"
+#    with_items:
+#       - "Alex"
+#       - "Max"
+#       - "Frank"
+###
