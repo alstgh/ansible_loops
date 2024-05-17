@@ -21,3 +21,17 @@
       state: stopped
     loop: '{{ range(3000,3020) }}'
     when: "'{{ project_title }}_3000.service' in ansible_facts.services"
+
+
+
+  # - name: Kill services for ports 3000-3019
+  #   shell: 'systemctl kill {{ project_title }}_{{ item }}.service'
+  #   loop: '{{ range(3000,3020) }}'
+  #   when: "'{{ project_title }}_3000.service' in ansible_facts.services"
+
+  # - name: Stop services for ports 3000-3019
+  #   service:
+  #     name: '{{ project_title }}_{{ item }}.service'
+  #     state: stopped
+  #   loop: '{{ range(3000,3020) }}'
+  #   when: "'{{ project_title }}_3000.service' in ansible_facts.services"
