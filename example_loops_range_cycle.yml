@@ -57,23 +57,3 @@
   #       WantedBy=multi-user.target
   #     dest: '{{ file_path }}/{{ project_title }}_{{ item }}.service'
   #   loop: '{{ range(3000,3020) }}'
-
-    # - name: Configuration systemd file for ports 3000-3019
-  #   copy:
-  #     content: |
-  #       [Unit]
-  #       Description={{ project_title }}_{{ item }}
-  #       After=multi-user.target
-
-  #       [Service]
-  #       Type=idle
-  #       WorkingDirectory={{ current_dir }}
-  #       ExecStart={{ current_dir }}/{{ project_title }} {{ item }}
-  #       SyslogIdentifier={{ project_title }}_{{ item }}
-  #       Restart=always
-  #       RestartSec=60
-
-  #       [Install]
-  #       WantedBy=multi-user.target
-  #     dest: '{{ file_path }}/{{ project_title }}_{{ item }}.service'
-  #   loop: '{{ range(3000,3020) }}'
