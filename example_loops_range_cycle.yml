@@ -46,3 +46,30 @@
     file_path: '/opt'
     project_title: 'service_1'
     current_dir: '/opt/{{ project_title }}/current'
+
+    - name: Example loops range cycle
+  hosts: deb11test
+  gather_facts: 'no'
+  become: 'yes'
+  vars:
+    file_path: '/opt'
+    project_title: 'service_1'
+    current_dir: '/opt/{{ project_title }}/current'
+
+    - name: Example loops range cycle
+  hosts: deb11test
+  gather_facts: 'no'
+  become: 'yes'
+  vars:
+    file_path: '/opt'
+    project_title: 'service_1'
+    current_dir: '/opt/{{ project_title }}/current'
+
+    - name: Example loops range cycle
+  hosts: deb11test
+  gather_facts: 'no'
+  become: 'yes'
+  vars:
+    file_path: '/opt'
+    project_title: 'service_1'
+    current_dir: '/opt/{{ project_title }}/current'
