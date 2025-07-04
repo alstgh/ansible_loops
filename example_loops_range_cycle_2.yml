@@ -23,3 +23,30 @@
     when: "'{{ project_title }}_3000.service' in ansible_facts.services"
 
 # *****
+
+
+- name: Example loops range cycle
+  hosts: deb11test
+  gather_facts: 'yes'
+  become: 'yes'
+  vars:
+    file_path: '/opt'
+    project_title: 'sevice_1'
+    current_dir: '/opt/{{ project_title }}/current'
+  tasks:
+  - name: Populate service facts
+    service_facts:
+
+  - name: Kill services for ports 3000-3019
+    shell: 'systemctl kill {{ project_title }}_{{ item }}.service'
+    loop: '{{ range(3000,3020) }}'
+    when: "'{{ project_title }}_3000.service' in ansible_facts.services"
+
+  - name: Stop services for ports 3000-3019
+    service:
+      name: '{{ project_title }}_{{ item }}.service'
+      state: stopped
+    loop: '{{ range(3000,3020) }}'
+    when: "'{{ project_title }}_3000.service' in ansible_facts.services"
+
+# *****
